@@ -1,5 +1,6 @@
 import { sentrySvelteKit } from '@sentry/sveltekit';
 import { sveltekit } from '@sveltejs/kit/vite';
+import houdini from "houdini/vite";
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -9,8 +10,8 @@ export default defineConfig({
 				org: 'personal-frn',
 				project: 'javascript-react'
 			},
-			autoInstrument: true
 		}),
+		houdini(),
 		sveltekit()
 	],
 	test: {
